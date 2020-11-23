@@ -5,6 +5,8 @@ def analizar_peliculas():
     """
     Escribe tu codigo aquí
     """
+    archivo_csv = (pd.read_csv('movies_metadata.csv'))[['title','release_date','budget','revenue','runtime']]
+    result = archivo_csv[(archivo_csv.revenue > 2000000) & (archivo_csv.budget < 1000000)]
     return result
 
 
